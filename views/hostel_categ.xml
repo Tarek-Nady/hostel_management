@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.actions.act_window" id="hostel_category_action">
+        <field name="name">Hostel Categories</field>
+        <field name="res_model">hostel.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="hostel_category_menu" name="Hostel Categories"
+              parent="my_hostel.hostel_configuration" action="hostel_category_action"/>
+
+    <record model="ir.ui.view" id="hostel_category_view_form">
+        <field name="name">Hostel Categories Form</field>
+        <field name="model">hostel.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="parent_id"/>
+                    </group>
+                </group>
+                <group>
+                    <field name="child_ids"/>
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>

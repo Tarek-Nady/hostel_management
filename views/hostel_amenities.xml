@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_hostel_amenities_tree">
+            <field name="name">hostel.amenities.tree</field>
+            <field name="model">hostel.amenities</field>
+            <field name="arch" type="xml">
+                <tree string="Amenities">
+                    <field name="name"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="view_hostel_amenities_form">
+            <field name="name">hostel.amenities.form</field>
+            <field name="model">hostel.amenities</field>
+            <field name="arch" type="xml">
+                <form string="Room">
+                    <sheet>
+                        <group col="4">
+                            <field name="name"/>
+                        </group>
+                        <group col="4">
+                            <field name="active"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        
+        <record model="ir.actions.act_window" id="action_hostel_amenities">
+            <field name="name">Amenities</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hostel.amenities</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Create Amenities.
+                </p>
+            </field>
+        </record>
+
+
+        <menuitem id="hostel_configuration" name="configuration" parent="my_hostel.hostel_main_menu"
+                  groups="my_hostel.group_hostel_manager"
+                  sequence="10"/>
+        
+        
+        <menuitem id="hostel_amenities_menu" name="Hostel Amenities" parent="my_hostel.hostel_configuration"
+                  action="my_hostel.actions_hostel_student"
+                  sequence="1"/>
+
+        
+        
+    </data>
+</odoo>

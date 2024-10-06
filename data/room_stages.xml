@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record model="hostel.room.stage" id="stage_draft">
+        <field name="name">Draft</field>
+        <field name="sequence">1</field>
+    </record>
+    <record model="hostel.room.stage" id="stage_available">
+        <field name="name">Available</field>
+        <field name="sequence">15</field>
+    </record>
+    <record model="hostel.room.stage" id="stage_reserved">
+        <field name="name">Reserved</field>
+        <field name="sequence">5</field>
+        <field name="fold">True</field>
+    </record>
+</odoo>
